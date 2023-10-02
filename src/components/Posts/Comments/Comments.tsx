@@ -24,7 +24,7 @@ import {
   import { Post, postState } from "../../../atoms/postsAtom";
   import { firestore } from "../../../firebase/clientApp";
   import CommentItem, { Comment } from "./CommentItem";
-import CommentInput from "./COmmentInput";
+import CommentInput from "./CommentInput";
   
   type CommentsProps = {
     user: User;
