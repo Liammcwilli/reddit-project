@@ -44,7 +44,8 @@ const [communityStateValue, setCommunityStateValue] =
             const snippets = snippetDocs.docs.map(doc => ({...doc.data() }));
             setCommunityStateValue(prev => ({
                 ...prev,
-                mySnippets: snippets as CommunitySnippet[]
+                mySnippets: snippets as CommunitySnippet[],
+                snippetsFetched: true,
             }))
 
 
@@ -143,7 +144,8 @@ const [communityStateValue, setCommunityStateValue] =
         if (!user) {
           setCommunityStateValue(prev => ({
             ...prev,
-            postVotes: [],
+            mySnippets: [],
+            snippetsFetched: false
           }))
           return;
         };
