@@ -9,6 +9,7 @@ import { FaReddit } from "react-icons/fa";
 import { IoImageOutline } from "react-icons/io5";
 import { useSetRecoilState } from "recoil";
 import { AuthModalState } from "@/atoms/authModalAtom";
+import useDirectory from "@/hooks/useDirectory";
 
 
 
@@ -16,6 +17,7 @@ const CreatePostLink: React.FC = () => {
   const router = useRouter();
   const [user] = useAuthState(auth);
   const setAuthModalState = useSetRecoilState(AuthModalState);
+  const { toggleMenuOpen } = useDirectory();
 
 
   const onClick = () => {
@@ -25,7 +27,13 @@ const CreatePostLink: React.FC = () => {
     }
 
     const { communityId } = router.query;
+
+    if(communityId) {
       router.push(`/r/${communityId}/submit`);
+      return;
+    } 
+    toggleMenuOpen();
+
     };
   
   
