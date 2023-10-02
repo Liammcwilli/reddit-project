@@ -30,7 +30,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = ({ toggleView }) => {
         Reset your password
       </Text>
       {success ? (
-        <Text mb={4}>Check your email :)</Text>
+        <Text mb={4}>Check your email :</Text>
       ) : (
         <>
           <Text fontSize="sm" textAlign="center" mb={2}>
