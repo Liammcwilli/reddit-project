@@ -8,7 +8,7 @@ import { useSetRecoilState } from "recoil";
 
 
 
-const ResetPassword: React.FC = ({ toggleView }) => {
+const ResetPassword: React.FC = () => {
   const setAuthModalState = useSetRecoilState(AuthModalState);
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
